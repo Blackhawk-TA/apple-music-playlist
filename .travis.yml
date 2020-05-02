@@ -3,3 +3,4 @@ node_js:
   - "8.17.0"
 script:
   - npm run-script lint
+  - nyc npm test && nyc report --reporter=text-lcov | coveralls
