@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "eslint --ext .js ./",
 		"test": "mocha --ext .spec.js --exit",
-		"test-coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+		"test-coverage": "nyc npm test"
 	},
 	"keywords": [
 		"apple",
