@@ -7,7 +7,7 @@
 
 ### What is Apple-Music-Playlist?
 It is a small npm module which allows getting the playlist information of an apple music playlist by its URL.
-The informations contains the title, artist and album of each track.
+The information that is returned contains the title, artist and album of each track.
 
 ### Usage
 ```js
