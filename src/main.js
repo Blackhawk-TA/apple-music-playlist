@@ -1,5 +1,5 @@
 const cheerio = require("cheerio");
-const request = require("request");
+const axios = require("axios");
 
 module.exports = {
 	/**
@@ -9,29 +9,31 @@ module.exports = {
 	 */
 	getPlaylist: function(url) {
 		return new Promise((resolve, reject) => {
-			request(url, {}, (err, res, body) => {
-				if (err) {
+			if (!url) {
+				reject(new Error("Playlist url is undefined"));
+			} else {
+				axios.get(url).then(res => {
+					let $ = cheerio.load(res.data),
+						aTitleDivs = $(".song-name").toArray(),
+						aArtistDivs = $(".dt-link-to").toArray(),
+						aPlaylist = [],
+						i,
+						j = 0;
+
+					for (i = 0; i < aTitleDivs.length; i++) {
+						aPlaylist.push({
+							album: aArtistDivs[j + 1].firstChild.data,
+							artist: aArtistDivs[j].firstChild.data,
+							title: aTitleDivs[i].lastChild.data
+						});
+						j += 2;
+					}
+
+					resolve(aPlaylist);
+				}).catch(err => {
 					reject(err);
-				}
-
-				let $ = cheerio.load(body),
-					aTitleDivs = $(".song-name").toArray(),
-					aArtistDivs = $(".dt-link-to").toArray(),
-					aPlaylist = [],
-					i,
-					j = 0;
-
-				for (i = 0; i < aTitleDivs.length; i++) {
-					aPlaylist.push({
-						album: aArtistDivs[j+1].firstChild.data,
-						artist: aArtistDivs[j].firstChild.data,
-						title: aTitleDivs[i].lastChild.data
-					});
-					j += 2;
-				}
-
-				resolve(aPlaylist);
-			});
+				});
+			}
 		});
 	}
 };

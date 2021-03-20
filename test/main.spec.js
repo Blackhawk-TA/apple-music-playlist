@@ -38,7 +38,7 @@ describe("The main module", function() {
 		it("Rejects the promise with an error if the url is empty", function() {
 			//Arrange
 			let sPlaylistUrl = "",
-				sExpectedError = "Error: options.uri is a required argument";
+				sExpectedError = "Error: Playlist url is undefined";
 
 			//Act
 			return amply.getPlaylist(sPlaylistUrl).catch(err => {

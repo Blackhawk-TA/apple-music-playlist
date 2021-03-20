@@ -1,6 +1,6 @@
 {
 	"name": "apple-music-playlist",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Fetch playlist data from apple music",
 	"main": "src/main.js",
 	"scripts": {
@@ -21,14 +21,14 @@
 	"author": "Blackhawk (https://tapadventures.com/)",
 	"license": "MIT",
 	"dependencies": {
-		"cheerio": "^1.0.0-rc.3",
-		"request": "^2.88.2"
+		"axios": "^0.21.1",
+		"cheerio": "^1.0.0-rc.5"
 	},
 	"devDependencies": {
 		"coveralls": "^3.1.0",
 		"eslint": "^6.8.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"mocha": "^7.1.2",
-		"nyc": "^15.0.1"
+		"eslint-plugin-promise": "^4.3.1",
+		"mocha": "^7.2.0",
+		"nyc": "^15.1.0"
 	}
 }
