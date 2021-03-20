@@ -46,5 +46,17 @@ describe("The main module", function() {
 				assert.strictEqual(err.toString(), sExpectedError, "The correct error message is returned.");
 			});
 		});
+
+		it("Rejects the promise with an error if get request fails", function() {
+			//Arrange
+			let sPlaylistUrl = "some invalid url",
+				sExpectedError = "Error: connect ECONNREFUSED 127.0.0.1:80";
+
+			//Act
+			return amply.getPlaylist(sPlaylistUrl).catch(err => {
+				//Assert
+				assert.strictEqual(err.toString(), sExpectedError, "The correct error message is returned.");
+			});
+		});
 	});
 });
