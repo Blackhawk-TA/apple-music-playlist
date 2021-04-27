@@ -14,19 +14,19 @@ module.exports = {
 			} else {
 				axios.get(url).then(res => {
 					let $ = cheerio.load(res.data),
-						aTitleDivs = $(".song-name").toArray(),
-						aArtistDivs = $(".dt-link-to").toArray(),
+						aTitleDivs = $(".songs-list-row__song-name").toArray(),
+						aArtistDivs = $(".songs-list-row__link").toArray(),
 						aPlaylist = [],
 						i,
 						j = 0;
 
 					for (i = 0; i < aTitleDivs.length; i++) {
 						aPlaylist.push({
-							album: aArtistDivs[j + 1].firstChild.data,
+							album: aArtistDivs[j + 2].firstChild.data,
 							artist: aArtistDivs[j].firstChild.data,
 							title: aTitleDivs[i].lastChild.data
 						});
-						j += 2;
+						j += 3;
 					}
 
 					resolve(aPlaylist);
