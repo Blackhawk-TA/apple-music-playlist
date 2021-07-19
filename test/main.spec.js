@@ -3,6 +3,8 @@ const assert = require("assert");
 
 describe("The main module", function() {
 	describe("The function getPlaylist", function() {
+		this.timeout(5000);
+
 		it("Resolves the promise with the album, artist and title in an array as result", function() {
 			//Arrange
 			let sPlaylistUrl = "https://music.apple.com/de/playlist/test/pl.u-RRbV0XNsxa2oq6",
