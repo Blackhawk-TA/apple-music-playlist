@@ -21,8 +21,8 @@
 	"author": "Blackhawk (https://tapadventures.com/)",
 	"license": "MIT",
 	"dependencies": {
-		"axios": "^0.21.1",
-		"cheerio": "^1.0.0-rc.5"
+		"axios": "^0.21.4",
+		"cheerio": "^1.0.0-rc.10"
 	},
 	"devDependencies": {
 		"coveralls": "^3.1.0",
