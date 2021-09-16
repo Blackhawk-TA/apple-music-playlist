@@ -3,7 +3,7 @@ const assert = require("assert");
 
 describe("The main module", function() {
 	describe("The function getPlaylist", function() {
-		this.timeout(5000);
+		this.timeout(10000);
 
 		it("Resolves the promise with the album, artist and title in an array as result", function() {
 			//Arrange
