@@ -22,9 +22,9 @@ module.exports = {
 
 					for (i = 0; i < aTitleDivs.length; i++) {
 						aPlaylist.push({
-							album: aArtistDivs[j + 2].children[1].data,
-							artist: aArtistDivs[j].children[1].data,
-							title: aTitleDivs[i].children[1].data
+							album: aArtistDivs[j + 2].children[0].data,
+							artist: aArtistDivs[j].children[0].data,
+							title: aTitleDivs[i].children[0].data
 						});
 						j += 3;
 					}
