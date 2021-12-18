@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8.17.0"
+  - "14.18.2"
 script:
   - npm run-script lint
   - nyc npm test && nyc report --reporter=text-lcov | coveralls
